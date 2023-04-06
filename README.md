@@ -10,7 +10,8 @@ xml records can be validated against a schema which define rules that each eleme
 below is an example of a simple xsd schema the associated xml:
 
 
-![simple_xsd_and_xml.jpg](:/acb5d9513f0f42798fbd73faed9460cb)
+![img1](https://github.com/jac-111/Schema_management/blob/main/images/image1.jpg?raw=true)
+
 
 The principles observed here carry through to the meta-genome schema. Lets first breakdown what we can see in the sample schema:
  
@@ -72,7 +73,7 @@ The 4th entry of the base elements in a "choice" type. This means the nature of 
 
 As mentioned, the nesting of complex types is fundamental within this schema. Below is a relatively easy to understand complextype within the meta-genome schema:
 
-![stress-strain-compleType.jpg](:/671160f023d94d9e8f485ede68daf831)
+![img2](https://github.com/jac-111/Schema_management/blob/main/images/image2.jpg?raw=true)
 
 Here, the complexType is named "stress-strain-convention". Within it we have  sequence that contains two elements, strain-convention and stress-convention. These elements contain attributes - form, minOccurs, maxOccurs and name.
  - form = requirement for element to to be qualified with a namespace prefix.
@@ -91,16 +92,16 @@ In the same way that string, int or float types can be called, this "stress-stra
 Here I will demo how to nest complexTypes. I will use a simple example to highlight this.
 
 Below is a complex type that enables the publication author name to be input:
-![57ea44957e590895d5e122cfa2a81ba7.png](:/388e2430702f45b99054ef7a6d67d8a9)
+![img3](https://github.com/jac-111/Schema_management/blob/main/images/image3.jpg?raw=true)
 
 Here we are naming the type "authors" and taking two string type elements: author-initials and author-surname. These elements are mandatory and can only appear once.
 
 Now, we can call the authors type:
-![13d813d75feed3b1265fdff1d072006e.png](:/324e731719f048878a66c9c6be3b8842)
+![img4](https://github.com/jac-111/Schema_management/blob/main/images/image4.jpg?raw=true)
 
 Within the "publication-details" complexType, we call for 3 elements (here) - id, publication-authors and publication-title. We will focus on the authors element. Within this element we call the "authors" type show above, and we do so with maxOccurs="unbounded". This allows as many authors as necessary to be input. This results in the following structure in the submission page:
 
-![16edd12dea9da424cf9b4acc2f64cd5f.png](:/bcbfc0a6e07543089842c8a960124cc1)
+![img5](https://github.com/jac-111/Schema_management/blob/main/images/image5.jpg?raw=true)
 
 Here we can see the (+) icon allows us to add more authors as necessary.
 
@@ -108,11 +109,11 @@ Here we can see the (+) icon allows us to add more authors as necessary.
 
 As mentioned, nesting is key. So far we have generated complexTypes that contain elements. This is the fundamental way to build up a schema. However, we have not yet declared a structure for our schema. At the very bottom of mecha-metagenome-schema31 (line 5154) we see the fundamental structure of mecha-metagenome-schema31. In the image below, we see a snippet of this code:
 
-![0f320ad3bffa6e38fd51649fee29ee78.png](:/57f6f3df7cd7440889ce549f00e0e7d1)
+![img6](https://github.com/jac-111/Schema_management/blob/main/images/image6.jpg?raw=true)
 
 As shown, this is  still a complexType ("mecha-genome-map"), which must be called as a type within an element to appear within the schema: as shown in the final few lines of the schema:
 
-![d4c99bd72d5eaaa919e7c1a06ed6c38b.png](:/2b2809f60afd4cedb3cf476bc68156ef)
+![img7](https://github.com/jac-111/Schema_management/blob/main/images/image7.jpg?raw=true)
 
 Here it is quite clear that each section is separated into distinct elements and types. Publication-info is the simplest element to inspect. 
 
